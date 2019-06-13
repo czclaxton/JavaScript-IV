@@ -1,16 +1,26 @@
 // CODE here for your Lambda Classes
 //
+
+// MASTER OBJECT 'Person'
+
 class Person {
-    constructor(basicInfo) {
-        this.name = basicInfo.name;
-        this.age = basicInfo.age;
-        this.location = basicInfo.location;
+    constructor(perInfo) {
+        this.name = perInfo.name;
+        this.age = perInfo.age;
+        this.location = perInfo.location;
     }
 
     speak() {
         return `Hello my name is ${this.name}, and I am from ${this.location}!`;
     }
 }
+
+class Instructor {
+    constuctor()
+}
+
+
+// VARIABLES START HERE
 
 const fred = new Person({
     name: 'Fred',
@@ -21,4 +31,3 @@ const fred = new Person({
     // catchPhrase: `Don't forget the homies`
   });
 
-console.log(fred.speak())
