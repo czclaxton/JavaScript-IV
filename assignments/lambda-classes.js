@@ -30,6 +30,17 @@ class Instructor extends Person {
     grade(student, subject) {
         return `${student.name} receives a perfect score on ${subject}!`;
     };
+
+    giveGrade(student) {
+        let percentage = Math.round(Math.random() * 100);
+        if (student.grade >= 100) {
+            student.grade -= percentage;
+            return `${student.name}'s grade has decreased by ${percentage} percent. ${student.name}'s updated grade is ${student.grade}`;
+        } else {
+            student.grade += percentage;
+            return `${student.name}'s grade has increased by ${percentage} percent. ${student.name}'s updated grade is ${student.grade}`;
+        }
+    };
 };
 
 class Student extends Person {
@@ -38,6 +49,7 @@ class Student extends Person {
         this.previousBackground = stuInfo.previousBackground;
         this.className = stuInfo.className;
         this.favSubjects = stuInfo.favSubjects;
+        this.grade = stuInfo.grade;
     };
 
     listsSubjects() {
@@ -80,7 +92,8 @@ const willy = new Student({
     age: 20,
     previousBackground: 'I was attempting to be a self-taught programmer',
     className: 'Web21',
-    favSubjects: ['Html', 'CSS', 'JavaScript']
+    favSubjects: ['Html', 'CSS', 'JavaScript'],
+    grade: 100
 })
 
 const billy = new Student({
@@ -89,7 +102,8 @@ const billy = new Student({
     age: 30,
     previousBackground: 'I was attempting to be a self-taught plumber',
     className: 'Web21',
-    favSubjects: ['Math', 'CSS', 'JavaScript']
+    favSubjects: ['Math', 'CSS', 'JavaScript'],
+    grade: 75
 })
 
 const tilly = new Student({
@@ -98,7 +112,8 @@ const tilly = new Student({
     age: 10,
     previousBackground: 'I was attempting to be a self-taught juggler',
     className: 'Web21',
-    favSubjects: ['P.E.', 'CSS', 'JavaScript']
+    favSubjects: ['P.E.', 'CSS', 'JavaScript'],
+    grade: 50
 })
 
 // // Instructors
@@ -165,3 +180,6 @@ console.log(billy.PRAssignment('HTML'));
 console.log(tilly.sprintChallenge('Java'));
 console.log(belly.standUp('Channel 21'));
 console.log(nelly.debugsCode(billy, 'CSS'));
+console.log(fredward.giveGrade(tilly));
+console.log(fredward.giveGrade(billy));
+console.log(fredward.giveGrade(willy));
