@@ -28,7 +28,7 @@ class Instructor extends Person {
     };
 
     grade(student, subject) {
-        return `${student} receives a perfect score on ${subject}!`;
+        return `${student.name} receives a perfect score on ${subject}!`;
     };
 };
 
@@ -72,14 +72,7 @@ class ProjectManager extends Instructor {
 
 // VARIABLES START HERE
 
-const fred = new Instructor({
-    name: 'Fred',
-    location: 'Bedrock',
-    age: 37,
-    favLanguage: 'JavaScript',
-    specialty: 'Front-end',
-    catchPhrase: `Don't forget the homies`,
-  });
+// // Students
 
 const willy = new Student({
     name: 'Willy',
@@ -90,6 +83,54 @@ const willy = new Student({
     favSubjects: ['Html', 'CSS', 'JavaScript']
 })
 
+const billy = new Student({
+    name: 'Billy',
+    location: 'Utah',
+    age: 30,
+    previousBackground: 'I was attempting to be a self-taught plumber',
+    className: 'Web21',
+    favSubjects: ['Math', 'CSS', 'JavaScript']
+})
+
+const tilly = new Student({
+    name: 'Tilly',
+    location: 'Utah',
+    age: 10,
+    previousBackground: 'I was attempting to be a self-taught juggler',
+    className: 'Web21',
+    favSubjects: ['P.E.', 'CSS', 'JavaScript']
+})
+
+// // Instructors
+
+const fred = new Instructor({
+    name: 'Fred',
+    location: 'Bedrock',
+    age: 37,
+    favLanguage: 'JavaScript',
+    specialty: 'Front-end',
+    catchPhrase: `Don't forget the homies`,
+  });
+
+  const ahmed = new Instructor({
+    name: 'ahmed',
+    location: 'Bed',
+    age: 27,
+    favLanguage: 'Java',
+    specialty: 'Front-end',
+    catchPhrase: `Don't forget`,
+  });
+
+  const fredward = new Instructor({
+    name: 'Fredward',
+    location: 'Rock',
+    age: 77,
+    favLanguage: 'Java',
+    specialty: 'Back-end',
+    catchPhrase: `Don't, homies`,
+  });
+// // Project Managers
+
 const kelly = new ProjectManager({
     name: 'Kelly',
     location: 'Iowa',
@@ -98,5 +139,29 @@ const kelly = new ProjectManager({
     favInstructor: 'Fred'
   });
 
-  console.log(kelly.standUp('channel1'));
+  const nelly = new ProjectManager({
+    name: 'Nelly',
+    location: 'Colorado',
+    age: 57,
+    gradClassName: 'Web2',
+    favInstructor: 'Fred'
+  });
 
+  const belly = new ProjectManager({
+    name: 'Belly',
+    location: 'Iowa',
+    age: 47,
+    gradClassName: 'Web3',
+    favInstructor: 'Fred'
+  });
+
+// // // TESTING
+
+console.log(kelly.speak());
+console.log(fred.demo('math'));
+console.log(ahmed.grade(willy, 'Javascript'));
+console.log(willy.listsSubjects());
+console.log(billy.PRAssignment('HTML'));
+console.log(tilly.sprintChallenge('Java'));
+console.log(belly.standUp('Channel 21'));
+console.log(nelly.debugsCode(billy, 'CSS'));
